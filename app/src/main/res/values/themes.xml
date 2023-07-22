@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.Clacuclator" parent="Base.Theme.Clacuclator" />
+
 </resources>

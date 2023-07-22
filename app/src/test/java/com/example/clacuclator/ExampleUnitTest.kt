@@ -10,8 +10,16 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun toRPN() {
+        val tp = CLogic().readNotation("3 + 4 * 2 / (1 - 5)^2")
+        assertEquals("3 4 2 * 1 5 − 2 ^ / +", tp)
+    }
+
+    @Test
+    fun calc(){
+        val ans = CLogic().calculateRPN(CLogic().readNotation("3 4+"))
+        assertEquals(7.toDouble(), ans, 0.01)
     }
 }
