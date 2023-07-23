@@ -1,26 +1,59 @@
 package com.example.clacuclator
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    var currentExpression = ""
 
-    private fun addElem(c: Char) {
-        currentExpression += c
+    val currentExpression: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
     }
 
-    private fun delLast() {
-        if (currentExpression.isNotEmpty())
-            currentExpression.dropLast(1)
+    fun addElem(c: Char) {
+        currentExpression.value += c
     }
 
-    private fun clear(){
-        currentExpression = ""
+    fun delLast() {
+        if (currentExpression.value!!.isNotEmpty() && (currentExpression.value!!.last() != '('
+                    || currentExpression.value!!.last() != ')')
+        )
+            currentExpression.value = currentExpression.value!!.dropLast(1)
+        else {
+            currentExpression.value = currentExpression.value!!.dropLast(1)
+            countOfBrackets--
+        }
     }
 
-    private fun equal(expression: String){
-        val cLogic = CLogic()
-        currentExpression = cLogic.calculateRPN(cLogic.readNotation(expression)).toString()
+    fun clear() {
+        currentExpression.value = ""
+    }
 
+    fun equal(expression: String) {
+        try {
+            val cLogic = CLogic()
+            currentExpression.value =
+                cLogic.calculateRPN(cLogic.readNotation(expression)).toString()
+        } catch (e: Exception) {
+            currentExpression.value = "ERROR"
+        }
+
+    }
+
+    private var countOfBrackets = 0
+    fun brackets() {
+        val ex = currentExpression.value
+        if (countOfBrackets == 0) {
+            currentExpression.value += '('
+            countOfBrackets++
+        } else if (ex?.last()!!.isDigit() && ex.last() == ')') {
+            currentExpression.value += '('
+            countOfBrackets++
+        } else if (countOfBrackets % 2 != 0 && ex.last().isDigit()) {
+            currentExpression.value += ')'
+            countOfBrackets++
+        } else {
+            currentExpression.value += ')'
+            countOfBrackets++
+        }
     }
 }

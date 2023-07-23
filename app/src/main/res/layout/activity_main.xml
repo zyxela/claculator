@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="0dp"
@@ -25,22 +26,22 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/ac"
                 style="@style/CalcButton"
                 android:text="AC" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/brackets"
                 style="@style/CalcButton"
                 android:text="( )" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/per"
                 style="@style/CalcButton"
                 android:text="%" />
 
             <Button
-                android:id="@+id/button20"
+                android:id="@+id/div"
                 style="@style/CalcButton"
                 android:text="/" />
         </TableRow>
@@ -51,22 +52,22 @@
             android:gravity="center_horizontal|center_vertical">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/seven"
                 style="@style/CalcButton"
                 android:text="7" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/eight"
                 style="@style/CalcButton"
                 android:text="8" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/nine"
                 style="@style/CalcButton"
                 android:text="9" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/multiple"
                 style="@style/CalcButton"
                 android:text="*" />
         </TableRow>
@@ -77,22 +78,22 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/four"
                 style="@style/CalcButton"
                 android:text="4" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/five"
                 style="@style/CalcButton"
                 android:text="5" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/six"
                 style="@style/CalcButton"
                 android:text="6" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/minus"
                 style="@style/CalcButton"
                 android:text="-" />
         </TableRow>
@@ -103,22 +104,22 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/one"
                 style="@style/CalcButton"
                 android:text="1" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/two"
                 style="@style/CalcButton"
                 android:text="2" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/three"
                 style="@style/CalcButton"
                 android:text="3" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/plus"
                 style="@style/CalcButton"
                 android:text="+" />
         </TableRow>
@@ -129,43 +130,44 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/zero"
                 style="@style/CalcButton"
                 android:text="0" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/dot"
                 style="@style/CalcButton"
                 android:text="." />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/clr"
                 style="@style/CalcButton"
                 android:text="clr" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/equal"
                 style="@style/CalcButton"
                 android:text="=" />
         </TableRow>
     </TableLayout>
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="375dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="text"
-        android:selectAllOnFocus="true"
-        android:textSize="74sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="375dp"
+            android:layout_height="127dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="text"
+            android:selectAllOnFocus="false"
+            android:textSize="74sp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

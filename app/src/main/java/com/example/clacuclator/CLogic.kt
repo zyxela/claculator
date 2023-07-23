@@ -97,6 +97,7 @@ class CLogic {
                     '*' -> ans = b * a
                     '/' -> ans = b / a
                     '^' -> ans = Math.pow(b, a)
+                    '%' -> ans = b % a
                 }
                 stack.push(ans)
             }
