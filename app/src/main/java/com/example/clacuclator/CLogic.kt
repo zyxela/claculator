@@ -12,13 +12,13 @@ class CLogic {
     private fun getPriority(c: Char): Int {
         return when (c) {
             '(' -> 0
-            ')' -> 1
-            '+' -> 2
-            '-' -> 3
-            '/' -> 4
-            '*' -> 4
-            '^' -> 5
-            else -> 6
+            ')' -> 0
+            '+' -> 1
+            '-' -> 1
+            '/' -> 2
+            '*' -> 2
+            '^' -> 3
+            else -> 4
         }
     }
 
